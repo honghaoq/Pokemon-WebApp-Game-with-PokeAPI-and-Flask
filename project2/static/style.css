@@ -1,0 +1,60 @@
+body{
+    background-color: rgb(248, 247, 241);
+    color: rgb(43, 43, 43);
+}
+
+h1{
+    text-align: center;
+}
+
+.container{
+    margin: 0px 40px;
+}
+
+.action-list{
+    background-color: #b1e6f3;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.team-info{
+    background-color: #a3e2f1;
+    font-size: 50px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.container .posts img{
+    margin: 5px;
+    width: 230px;
+}
+
+.container .posts{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #f3fad2;
+    padding: 1px;
+}
+
+.container .posts .post-header{
+    background-color: #f3fad2;
+    font-size: 25px;
+    text-align: center;
+}
+
+.container .post-detail{
+    justify-content: center;
+    display: grid;
+  grid-row-gap: 50px;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+
+.container .post-detail div{
+    background-color: rgba(241, 235, 195, 0.8);
+    padding: 40px;
+    font-size: 30px;
+    text-align: center;
+}

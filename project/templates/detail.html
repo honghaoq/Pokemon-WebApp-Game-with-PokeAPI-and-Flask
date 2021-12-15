@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block title %}Pokemon Detailed Stats{% endblock %}
+
+{% block conteudo %}
+
+
+<div class="post-detail">
+    <div>
+        <h3>name: {{ pokemon.name }}</h3>
+        <p>experience: {{ pokemon.experience }}</p>
+        <p>hp: {{ pokemon.hp }}</p>
+        <p>attack: {{ pokemon.attack }} </p>
+        <p>defense: {{ pokemon.defense }}</p>
+        <p>speed: {{ pokemon.speed }}</p>
+    </div>
+    <div>
+        <img
+            width="250"
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{ pokemon.id }}.png" 
+            alt="{{ pokemon.name }}"> <br>
+        <img
+            width="250"
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ pokemon.id }}.png" 
+            alt="{{ pokemon.name }}"> 
+        <img
+            width="250"
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/{{ pokemon.id }}.png" 
+            alt="{{ pokemon.name }}"> 
+    </div>
+</div>
+
+{% endblock %}

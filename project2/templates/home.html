@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block title %}Pokemon list{% endblock %}
+
+{% block conteudo %}
+
+
+<!-- <div class="action-list">
+    <form class="search" action="{{ url_for('home') }}" method="get">
+        <input type="text" name="search" placeholder="pokemon name">
+        <button type="submit">search</button>
+    </form>
+</div> -->
+
+<div class="team-info">
+    <h1 style="text-align:center"> <b>Team {{win}} Wins! </b></h1>
+</div>
+
+<div class="team-info">
+    <h2 style="text-align:center"> <b>Team 1: (Total Score: {{score1}})</b></h2>
+    <h3 style="text-align:center"> <b>Detailed Score: Hp {{score1_hp}} | Exp {{score1_exp}} | Attack {{score1_attack}} | Defense {{score1_defense}} | Speed {{score1_speed}}</b></h3>
+</div>
+
+<div class="posts">
+    <!-- <p style="text-align:center"> <b>Team 1: </b></p>
+    <p></p><br>
+    <p></p><br> -->
+    {% for pokemon in pokemons[:3] %}
+    <div class="post-header">
+        <h3>Name: {{ pokemon.name }}</h3>
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{ pokemon.id }}.png" alt="{{ pokemon.name }}">
+        <!-- <p>Overview:</p> -->
+        <p>Id: {{ pokemon.id }} | Type: {{ pokemon.type }}<br>
+        Experience: {{ pokemon.experience }} | Hp: {{ pokemon.hp }}<br>
+        <a href="{{ url_for('detail', name=pokemon.name ) }}">Detailed Stats</a></p>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="team-info">
+    <h2 style="text-align:center"> <b>Team 2 (Total Score: {{score2}})</b></h2>
+    <h3 style="text-align:center"> <b>Detailed Score: Hp {{score2_hp}} | Exp {{score2_exp}} | Attack {{score2_attack}} | Defense {{score2_defense}} | Speed {{score2_speed}}</b></h3>
+</div>
+
+<div class="posts">
+    <!-- <p style="text-align:center"> <b>Team 1: </b></p>
+    <p></p><br>
+    <p></p><br> -->
+    {% for pokemon in pokemons[3:] %}
+    <div class="post-header">
+        <h3>Name: {{ pokemon.name }}</h3>
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{ pokemon.id }}.png" alt="{{ pokemon.name }}">
+        <!-- <p>Overview:</p> -->
+        <p>Id: {{ pokemon.id }} | Type: {{ pokemon.type }}<br>
+        Experience: {{ pokemon.experience }} | Hp: {{ pokemon.hp }}<br>
+        <a href="{{ url_for('detail', name=pokemon.name ) }}">Detailed Stats</a></p>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
